@@ -15,6 +15,14 @@ export default new Router({
           resolve(require('../App.vue'));
         });
       }
+    }, {
+      path: '/welcome',
+      name: 'welcome',
+      component(resolve) {
+        require.ensure(['../components/welcome/welcome.vue'], () => {
+          resolve(require('../components/welcome/welcome.vue'));
+        });
+      }
     }
   ]
 })

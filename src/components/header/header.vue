@@ -2,7 +2,13 @@
   <div>
     <div class="page-cover" v-show="isShowMenu" @click="isShow"></div>
     <header class="header" :class="{'show':isShowMenu}" @click="isShow">
+      <div class="pull-left">
+        <span class="iconfont icon-fenlei"></span>
+      </div>
       <h1 class="title">{{headerTitle}}</h1>
+      <div class="pull-right">
+        <span class="iconfont icon-sousuo_sousuo"></span>
+      </div>
     </header>
     <v-menu :show="isShowMenu" />
   </div>
@@ -32,6 +38,15 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.page-cover {
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 7
+}
 header {
   position: fixed;
   top: 0;
@@ -48,7 +63,7 @@ header {
   box-shadow: 0 1px 0 rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .1);
   transition: all .3s ease;
   &.show {
-    transform: translateX(200px);
+    transform: translateX(250px);
   }
   .title {
     position: absolute;
@@ -63,6 +78,26 @@ header {
     text-overflow: ellipsis;
     z-index: 2;
     font-weight: normal;
+  }
+  .pull-left {
+    display: flex;
+    float: left;
+    padding: 0 10px;
+    font-size:16px;
+    font-weight: 400;
+    .iconfont {
+      font-size: 18px;
+    }
+  }
+  .pull-right {
+    display: flex;
+    float: right;
+    padding: 0 10px;
+    font-size:16px;
+    font-weight: 400;
+    .iconfont {
+      font-size: 18px;
+    }
   }
 }
 </style>

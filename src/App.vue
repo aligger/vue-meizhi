@@ -16,8 +16,8 @@ export default {
     vHeader,
     vLoading
   },
-  data () {
-    return  {
+  data() {
+    return {
       isShowLoading: false
     }
   }
@@ -31,6 +31,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  padding-top: 50px;
 }
 </style>
