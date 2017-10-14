@@ -21,7 +21,7 @@ const mutations = {
    * @param {*} state 
    * @param {*} title 
    */
-  UPDATE_TITLE(state, title) {
+  UPDATE_TITLE(title) {
     state.headerTitle = title;
   },
 
