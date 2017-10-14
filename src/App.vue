@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -38,5 +38,8 @@ export default {
   color: #2c3e50;
   width: 100%;
   padding-top: 50px;
+  .loading{
+    top:50px;
+  }
 }
 </style>
