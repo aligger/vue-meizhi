@@ -10,7 +10,7 @@
         </h2>
       </div>
       <ul class="menu-ul">
-        <li v-for="(menu, key) in menus" :key="key">
+        <li v-for="(menu, key) in menus" :key="key" @click="updateHeader(MENU_CONVERT[menu],menu)">
           <router-link class="item" :to="menu">
             <div class="menu-icon">
               <i class="iconfont" :class="'icon-'+menu"></i>
@@ -45,7 +45,10 @@ export default {
     ])
   },
   methods: {
-
+    updateHeader(title, menu) {
+      // this.$store.commit('UPDATE_TITLE', title);
+      this.$store.commit('UPDATE_MENU_STATE');
+    }
   }
 }
 </script>
@@ -73,7 +76,7 @@ export default {
       margin: 20px 70px;
       overflow: hidden;
       cursor: pointer;
-      transition: all .3s ease; 
+      transition: all .3s ease;
       img {
         width: 100%;
       }
@@ -127,6 +130,15 @@ export default {
         vertical-align: middle;
         margin-left: 10px;
         font-weight: 700;
+      }
+      &.active {
+        color: #01aef3;
+        .menu-icon {
+          background-color: #01aef3;
+          .iconfont {
+            color: #ffffff
+          }
+        }
       }
     }
   }
