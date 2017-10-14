@@ -9,6 +9,8 @@
 <script>
 import vHeader from './components/header/header.vue';
 import vLoading from './components/loading/loading.vue';
+import { mapState } from 'vuex';
+
 export default {
   name: 'app',
   components: {
@@ -18,8 +20,11 @@ export default {
   },
   data() {
     return {
-      isShowLoading: false
+      // isShowLoading: false
     }
+  },
+  computed: {
+    ...mapState(['isShowLoading'])
   }
 }
 </script>

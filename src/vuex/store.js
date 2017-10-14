@@ -21,15 +21,19 @@ const mutations = {
    * @param {*} state 
    * @param {*} title 
    */
-  UPDATE_TITLE(title) {
+  UPDATE_TITLE(state,title) {
     state.headerTitle = title;
   },
 
   /**
    * 更新 Menu 的显示状态
    */
-  UPDATE_MENU_STATE() {
+  UPDATE_MENU_STATE(state) {
     state.isShowMenu = !state.isShowMenu;
+  },
+
+  UPDATE_LOADING_STATE(state, bool = false) {
+    state.isShowLoading = bool;
   }
 }
 
